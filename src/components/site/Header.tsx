@@ -1,0 +1,159 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { nav, site } from "@/data/site";
+import { cn } from "@/lib/utils";
+
+export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  return (
+    <header
+      className={cn(
+        "on-dark fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        scrolled
+          ? "border-b border-oat-50/10 bg-loch-950/85 backdrop-blur-xl"
+          : "bg-transparent",
+      )}
+    >
+      <div className="container-page flex h-20 items-center justify-between gap-6">
+        <Link
+          href="/"
+          className="group flex items-center gap-3"
+          onClick={() => setOpen(false)}
+        >
+          <span className="flex h-10 shrink-0 items-center rounded-xl bg-oat-50 px-2 py-1.5 shadow-sm ring-1 ring-loch-950/5 sm:h-11">
+            <Image
+              src="/logo-mark.png"
+              alt=""
+              width={140}
+              height={85}
+              priority
+              className="h-full w-auto object-contain"
+            />
+          </span>
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-lg tracking-tight text-oat-50 sm:text-xl">
+              Glamping Loch Lomond
+            </span>
+            <span className="eyebrow mt-1 text-lamp-400/80">Ballagan Farm</span>
+          </span>
+        </Link>
+
+        <nav className="hidden items-center gap-7 lg:flex">
+          {nav.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-sm text-oat-100/75 transition-colors hover:text-oat-50"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <a
+            href={site.phoneHref}
+            className="hidden text-sm text-oat-100/75 transition-colors hover:text-oat-50 md:block"
+          >
+            {site.phone}
+          </a>
+          <a
+            href="#book"
+            className="hidden rounded-full bg-lamp-500 px-5 py-2.5 text-sm font-semibold text-loch-950 transition-all hover:bg-lamp-400 hover:shadow-glow sm:block"
+          >
+            Check dates
+          </a>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-label={open ? "Close menu" : "Open menu"}
+            className="grid h-10 w-10 place-items-center rounded-full border border-oat-50/20 text-oat-50 lg:hidden"
+          >
+            <span className="relative block h-3 w-4">
+              <span
+                className={cn(
+                  "absolute left-0 h-[1.5px] w-4 bg-current transition-all duration-300",
+                  open ? "top-1.5 rotate-45" : "top-0",
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute left-0 top-1.5 h-[1.5px] w-4 bg-current transition-all duration-300",
+                  open && "opacity-0",
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute left-0 h-[1.5px] w-4 bg-current transition-all duration-300",
+                  open ? "top-1.5 -rotate-45" : "top-3",
+                )}
+              />
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {open ? (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-oat-50/10 bg-loch-950/95 backdrop-blur-xl lg:hidden"
+          >
+            <nav className="container-page flex flex-col py-4">
+              {nav.map((item, i) => (
+                <motion.a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.05 + i * 0.04 }}
+                  className="border-b border-oat-50/5 py-4 font-display text-2xl text-oat-50 last:border-0"
+                >
+                  {item.label}
+                </motion.a>
+              ))}
+              <a
+                href="#book"
+                onClick={() => setOpen(false)}
+                className="mt-5 rounded-full bg-lamp-500 px-6 py-3.5 text-center text-sm font-semibold text-loch-950"
+              >
+                Check dates
+              </a>
+              <a
+                href={site.phoneHref}
+                className="mt-3 py-2 text-center text-sm text-oat-100/70"
+              >
+                {site.phone}
+              </a>
+            </nav>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </header>
+  );
+}

@@ -12,7 +12,9 @@ export const site = {
     postcode: "G83 8SB",
     country: "Scotland",
   },
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.glampinglochlomond.co.uk",
+  // `||` (not `??`) on purpose — Vercel project settings can have this env var
+  // present but set to an empty string, which `??` would treat as "set".
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.glampinglochlomond.co.uk",
   social: {
     facebook: "https://www.facebook.com/",
     instagram: "https://www.instagram.com/",

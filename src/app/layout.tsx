@@ -85,6 +85,15 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-GB" className={`${display.variable} ${body.variable}`}>
+      <head>
+        {/* Photos are served from this project's Vercel Blob store — warm the
+            connection early since almost every page loads several of them. */}
+        <link rel="preconnect" href="https://oiw4qguz3iz8s2jq.public.blob.vercel-storage.com" />
+        <link
+          rel="dns-prefetch"
+          href="https://oiw4qguz3iz8s2jq.public.blob.vercel-storage.com"
+        />
+      </head>
       <body>
         <a
           href="#main"

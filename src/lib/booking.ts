@@ -1,4 +1,6 @@
-import { BOOKING_BASE_URL, DEFAULT_RATE_TYPE_ID } from "@/data/site";
+/** Every booking link on the site points here — the InnStyle enquiries page. */
+const BOOKING_URL =
+  "https://glampinglochlomond.innstyle.co.uk/enquiries/27472117?bo=16836&going_home=true";
 
 export type Occupancy = {
   adults: number;
@@ -23,45 +25,13 @@ export const defaultOccupancy: Occupancy = {
   dogs: 0,
 };
 
-/**
- * Rebuilds the exact query string the InnStyle booking engine expects:
- *
- * booking[bookable_id], booking[start_date], booking[end_date], booking[discount],
- * iframe, booking[occupancy][adults|children|infants|dogs],
- * booking[rate_type_id], commit
- *
- * URLSearchParams handles the bracket encoding, so the output matches the
- * links currently in use on the live site.
- */
-export function buildBookingUrl({
-  bookableId,
-  startDate,
-  endDate,
-  occupancy,
-  rateTypeId = DEFAULT_RATE_TYPE_ID,
-  discount = "",
-}: BookingParams): string {
-  const occ = { ...defaultOccupancy, ...occupancy };
-
-  const params = new URLSearchParams();
-  params.set("booking[bookable_id]", bookableId);
-  params.set("booking[start_date]", startDate);
-  params.set("booking[end_date]", endDate);
-  params.set("booking[discount]", discount);
-  params.set("iframe", "0");
-  params.set("booking[occupancy][adults]", String(occ.adults));
-  params.set("booking[occupancy][children]", String(occ.children));
-  params.set("booking[occupancy][infants]", String(occ.infants));
-  params.set("booking[occupancy][dogs]", String(occ.dogs));
-  params.set("booking[rate_type_id]", rateTypeId);
-  params.set("commit", "Book");
-
-  return `${BOOKING_BASE_URL}?${params.toString()}`;
+export function buildBookingUrl(_params: BookingParams): string {
+  return BOOKING_URL;
 }
 
 /** Availability calendar for the whole property. */
 export function bookingHomeUrl(): string {
-  return "https://glampinglochlomond.innstyle.co.uk/bliss/bookings/new";
+  return BOOKING_URL;
 }
 
 export function toISODate(date: Date): string {

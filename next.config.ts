@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
     ],
     formats: ["image/avif", "image/webp"],
   },
+  experimental: {
+    // Trims framer-motion (the heaviest client dependency) down to the
+    // parts each page actually imports, instead of the whole library.
+    optimizePackageImports: ["framer-motion"],
+  },
   async redirects() {
     return [
       { source: "/footer/terms-of-use", destination: "/terms-of-use", permanent: true },

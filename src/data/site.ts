@@ -36,9 +36,6 @@ export const nav = [
  * These map 1:1 to the live booking engine — do not change without
  * confirming the bookable_id in InnStyle first.
  */
-export const BOOKING_BASE_URL =
-  "https://glampinglochlomond.innstyle.co.uk/bliss/bookings/new";
-
 export const DEFAULT_RATE_TYPE_ID = "70916";
 
 export type PodTheme = "rose" | "thistle";

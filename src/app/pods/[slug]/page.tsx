@@ -11,17 +11,17 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { getPodBySlug, getPodsWithFallback } from "@/lib/pods";
-import { getContent, type ContentBlock } from "@/lib/db";
+import { getContent, type ContentBlock, type GalleryImage } from "@/lib/db";
+import { getGalleryWithFallback } from "@/lib/gallery";
 import { getAvailabilitySummary } from "@/lib/availability";
 import { pods as podDefs, site } from "@/data/site";
 import { fallbackContent } from "@/data/content";
-import {
-  insidePhotos,
-  bbqHutPhotos,
-  hotTubPhotos,
-  saunaPhotos,
-  viewPhotos,
-} from "@/data/media";
+import type { Photo } from "@/data/media";
+
+/** Gallery rows (admin-editable) shaped for the static-photo props the gallery grid expects. */
+function toPhotos(images: GalleryImage[]): Photo[] {
+  return images.map((image) => ({ src: image.url, alt: image.alt }));
+}
 
 export const revalidate = 60;
 
@@ -71,17 +71,38 @@ export default async function PodPage({
 }) {
   const { slug } = await params;
 
-  const [pod, allPods, content, availability] = await Promise.all([
+  const [
+    pod,
+    allPods,
+    content,
+    availability,
+    insideImages,
+    bbqImages,
+    hotTubImages,
+    saunaImages,
+    viewImages,
+  ] = await Promise.all([
     getPodBySlug(slug),
     getPodsWithFallback(),
     getContent().catch(() => ({}) as Record<string, ContentBlock>),
     getAvailabilitySummary(),
+    getGalleryWithFallback("inside"),
+    getGalleryWithFallback("bbq hut"),
+    getGalleryWithFallback("hot tub"),
+    getGalleryWithFallback("sauna"),
+    getGalleryWithFallback("views"),
   ]);
 
   if (!pod) notFound();
 
   const isRose = pod.slug === "rose";
+  const isThistle = pod.slug === "thistle";
   const otherPod = allPods.find((p) => p.slug !== pod.slug && p.is_active);
+
+  const insidePhotos = toPhotos(insideImages);
+  const bbqHutPhotos = toPhotos(bbqImages);
+  const extrasPhotos = toPhotos([...hotTubImages, ...saunaImages]);
+  const viewPhotos = toPhotos(viewImages);
 
   const inside = block(content, "inside");
   const bbq = block(content, "bbq");
@@ -140,20 +161,39 @@ export default async function PodPage({
           </section>
         )}
 
-        <PodSection
-          id="pod-extras"
-          eyebrow="Also here"
-          heading={extras.heading}
-          body={extras.body}
-          points={[
-            "Private hot tub sessions",
-            "Scandinavian barrel sauna",
-            "Towels provided",
-            "Available whichever pod you're staying in",
-          ]}
-          photos={[...hotTubPhotos, ...saunaPhotos]}
-          footnote="Get in touch for availability and pricing — we'll have it ready before you arrive."
-        />
+        {isThistle ? (
+          <PodSection
+            id="pod-extras"
+            eyebrow="Exclusive to the Thistle Pod"
+            heading={extras.heading}
+            body={extras.body}
+            points={[
+              "Private hot tub, ready for you on arrival",
+              "Scandinavian barrel sauna",
+              "Towels provided",
+              "Included only with the Thistle Pod",
+            ]}
+            photos={extrasPhotos}
+            footnote="Get in touch for availability — we'll have it ready before you arrive."
+          />
+        ) : (
+          <section className="bg-loch-900 py-14 on-dark">
+            <div className="container-page">
+              <Reveal className="flex flex-wrap items-center justify-between gap-6 rounded-[2rem] border border-oat-50/12 bg-loch-950/40 px-8 py-8 sm:px-10">
+                <div>
+                  <p className="eyebrow mb-2 text-lamp-400">Fancy a hot tub or sauna?</p>
+                  <p className="max-w-lg text-oat-100/75">
+                    Our hot tub and Scandinavian barrel sauna come exclusively
+                    with the Thistle Pod.
+                  </p>
+                </div>
+                <ButtonLink href="/pods/thistle" variant="light">
+                  See the Thistle Pod
+                </ButtonLink>
+              </Reveal>
+            </div>
+          </section>
+        )}
 
         <PodSection
           id="pod-view"

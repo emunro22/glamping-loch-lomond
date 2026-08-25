@@ -110,8 +110,8 @@ export default async function HomePage() {
           flip
           tone="loch"
           points={[
-            "Two-ring cooker top and air fryer",
-            "Kettle, toaster, crockery and utensils",
+            "Air fryer, kettle, toaster and all crockery",
+            "Two-ring cooker top (Thistle) or electric frying pan (Rose)",
             "Bedding and towels included",
             "Robes and slippers waiting for you",
           ]}

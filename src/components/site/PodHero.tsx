@@ -89,7 +89,12 @@ export function PodHero({
                     <span className="h-1 w-1 rounded-full bg-lamp-500" />
                     BBQ hut available
                   </li>
-                ) : null}
+                ) : (
+                  <li className="flex items-center gap-2">
+                    <span className="h-1 w-1 rounded-full bg-lamp-500" />
+                    Own hot tub &amp; sauna
+                  </li>
+                )}
               </ul>
             </Reveal>
           </div>

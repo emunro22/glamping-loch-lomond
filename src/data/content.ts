@@ -14,7 +14,7 @@ export const fallbackContent: Record<string, { heading: string; body: string }> 
   },
   inside: {
     heading: "Inside the pod",
-    body: "The kitchen comes with everything you need: a two-ring cooker top, air fryer, kettle and toaster. All crockery and utensils are supplied in each pod. Bedding, towels, robes and slippers are included in your stay.",
+    body: "The kitchen comes with everything you need: an air fryer, kettle and toaster, plus a two-ring cooker top in the Thistle Pod or an electric frying pan in the Rose Pod. All crockery and utensils are supplied in each pod. Bedding, towels, robes and slippers are included in your stay.",
   },
   bbq: {
     heading: "The BBQ hut",
@@ -22,7 +22,7 @@ export const fallbackContent: Record<string, { heading: string; body: string }> 
   },
   extras: {
     heading: "Hot tub & sauna",
-    body: "A private hot tub session and a Scandinavian-style barrel sauna are both available to add to your stay, whichever pod you're in.",
+    body: "A private hot tub and a Scandinavian-style barrel sauna, both exclusive to the Thistle Pod.",
   },
   view: {
     heading: "The view",

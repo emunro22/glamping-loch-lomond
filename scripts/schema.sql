@@ -60,11 +60,11 @@ INSERT INTO pods (slug, name, tagline, description, features, bookable_id, rate_
 VALUES
   ('rose', 'The Rose Pod', 'The one with the BBQ hut',
    'The Rose Pod has sole access to our Scandinavian BBQ hut, so you can cook outdoors whatever the sky is doing. Inside it is the same story as its twin: a proper double bed, a pull-out sofa bed, and an en-suite with a walk-in shower.',
-   '["Exclusive use of the BBQ hut (addable to your stay)","Double bed plus double pull-out sofa bed","En-suite with walk-in shower","South-facing decking"]'::jsonb,
+   '["Exclusive use of the BBQ hut (addable to your stay)","Double bed plus double pull-out sofa bed","En-suite with walk-in shower","Electric frying pan, kettle and toaster","South-facing decking"]'::jsonb,
    '75351', '70916', 4, 1),
-  ('thistle', 'The Thistle Pod', 'Quiet corner of the field',
-   'Tucked into its own corner with an uninterrupted run of countryside in front of it. Same generous layout, same full kitchen, same walk-in shower, just a little more distance between you and everything else.',
-   '["Double bed plus double pull-out sofa bed","En-suite with walk-in shower","Full kitchen and dining space","South-facing decking"]'::jsonb,
+  ('thistle', 'The Thistle Pod', 'The one with the hot tub and sauna',
+   'The Thistle Pod has its own hot tub and sole access to our Scandinavian barrel sauna, tucked into a quiet corner with an uninterrupted run of countryside in front of it. Inside it is the same story as its twin: a proper double bed, a pull-out sofa bed, and an en-suite with a walk-in shower.',
+   '["Own hot tub and exclusive access to the sauna","Double bed plus double pull-out sofa bed","En-suite with walk-in shower","Two-ring cooker top, air fryer, kettle and toaster","South-facing decking"]'::jsonb,
    '75350', '70916', 4, 2)
 ON CONFLICT (slug) DO NOTHING;
 
@@ -76,9 +76,11 @@ INSERT INTO site_content (key, heading, body) VALUES
   ('pod', 'The pod',
    'All pods have their own electricity and water supply. Fully furnished, with a double bed and a double pull-out sofa bed. Each pod has an en-suite bathroom with a walk-in shower.'),
   ('inside', 'Inside the pod',
-   'The kitchen comes with everything you need: a two-ring cooker top, air fryer, kettle and toaster. All crockery and utensils are supplied in each pod. Bedding, towels, robes and slippers are included in your stay.'),
+   'The kitchen comes with everything you need: an air fryer, kettle and toaster, plus a two-ring cooker top in the Thistle Pod or an electric frying pan in the Rose Pod. All crockery and utensils are supplied in each pod. Bedding, towels, robes and slippers are included in your stay.'),
   ('bbq', 'The BBQ hut',
    'A Scandinavian-inspired BBQ hut, available exclusively to the Rose Pod. A central charcoal grill with a built-in chimney sits under a circular wooden dining table, with cushioned bench seating around the edge. To the rear you will find a prep area with a fridge and all the cooking tools you need.'),
+  ('extras', 'Hot tub & sauna',
+   'A private hot tub and a Scandinavian-style barrel sauna, both exclusive to the Thistle Pod.'),
   ('view', 'The view',
    'You are right out in the great outdoors. Situated in a rural setting, the pods face south so you can make the most of the sun in the beautiful Scottish countryside.'),
   ('contact', 'Come and stay',

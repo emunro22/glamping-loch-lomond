@@ -50,8 +50,8 @@ export const heroPhoto = exteriorPhotos[0];
 
 /** One representative exterior photo per pod, so the two cards don't repeat. */
 export const podHeroPhoto: Record<string, Photo> = {
-  rose: exteriorPhotos[0],
-  thistle: exteriorPhotos[2],
+  rose: exteriorPhotos[2],
+  thistle: exteriorPhotos[0],
 };
 
 export const logo = { src: "/logo.jpeg", alt: "Ballagan Farm Glamping Pods" };

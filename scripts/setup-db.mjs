@@ -17,17 +17,22 @@ if (!url) {
 const sql = neon(url);
 const schema = readFileSync(new URL("./schema.sql", import.meta.url), "utf8");
 
-const statements = schema
-  .split(/;\s*\n/)
+const withoutComments = schema
+  .split("\n")
+  .filter((line) => !line.trim().startsWith("--"))
+  .join("\n");
+
+const statements = withoutComments
+  .split(";")
   .map((s) => s.trim())
-  .filter((s) => s.length > 0 && !s.startsWith("--"));
+  .filter((s) => s.length > 0);
 
 let failed = 0;
 
 for (const statement of statements) {
   const label = statement.split("\n")[0].slice(0, 68);
   try {
-    await sql.query(statement);
+    await sql(statement);
     console.log("  ok  ", label);
   } catch (error) {
     failed += 1;

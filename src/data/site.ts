@@ -69,6 +69,7 @@ export const pods: Pod[] = [
       "Exclusive use of the BBQ hut (addable to your stay)",
       "Double bed plus double pull-out sofa bed",
       "En-suite with walk-in shower",
+      "Electric frying pan, kettle and toaster",
       "South-facing decking",
     ],
     highlight: "BBQ hut available",
@@ -76,18 +77,20 @@ export const pods: Pod[] = [
   {
     slug: "thistle",
     name: "The Thistle Pod",
-    tagline: "Quiet corner of the field",
+    tagline: "The one with the hot tub and sauna",
     bookableId: "75350",
     rateTypeId: DEFAULT_RATE_TYPE_ID,
     sleeps: 4,
     description:
-      "Tucked into its own corner with an uninterrupted run of countryside in front of it. Same generous layout, same full kitchen, same walk-in shower — just a little more distance between you and everything else.",
+      "The Thistle Pod has its own hot tub and sole access to our Scandinavian barrel sauna, tucked into a quiet corner with an uninterrupted run of countryside in front of it. Inside it's the same story as its twin: a proper double bed, a pull-out sofa bed, and an en-suite with a walk-in shower.",
     features: [
+      "Own hot tub and exclusive access to the sauna",
       "Double bed plus double pull-out sofa bed",
       "En-suite with walk-in shower",
-      "Full kitchen and dining space",
+      "Two-ring cooker top, air fryer, kettle and toaster",
       "South-facing decking",
     ],
+    highlight: "Hot tub & sauna included",
   },
 ];
 

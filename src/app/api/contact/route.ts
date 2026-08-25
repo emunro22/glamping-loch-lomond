@@ -77,7 +77,7 @@ export async function POST(request: Request) {
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.warn("RESEND_API_KEY not set — enquiry saved but no email sent.");
+    console.error("RESEND_API_KEY not set — enquiry saved but no email sent.");
     return NextResponse.json({ ok: true });
   }
 
@@ -102,22 +102,31 @@ export async function POST(request: Request) {
 
   try {
     const business = businessEnquiryEmail(emailData);
-    await resend.emails.send({
+    const businessResult = await resend.emails.send({
       from,
       to,
       replyTo: email,
       subject: business.subject,
       html: business.html,
     });
+    // The SDK resolves (never throws) on an API-level rejection — a bad
+    // "from" domain, sandbox-mode restrictions, etc. — so that has to be
+    // checked explicitly or a failed send silently reports success.
+    if (businessResult.error) {
+      throw new Error(`Business notification: ${businessResult.error.message}`);
+    }
 
     // Acknowledge to the guest so they know it landed.
     const confirmation = customerConfirmationEmail(emailData);
-    await resend.emails.send({
+    const confirmationResult = await resend.emails.send({
       from,
       to: email,
       subject: confirmation.subject,
       html: confirmation.html,
     });
+    if (confirmationResult.error) {
+      throw new Error(`Guest confirmation: ${confirmationResult.error.message}`);
+    }
   } catch (error) {
     console.error("Resend failed:", error);
     return NextResponse.json(

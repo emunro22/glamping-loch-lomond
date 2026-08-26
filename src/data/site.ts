@@ -22,11 +22,11 @@ export const site = {
 } as const;
 
 export const nav = [
-  { label: "The pods", href: "#pods" },
+  { label: "Pods", href: "#pods" },
   { label: "Inside", href: "#inside" },
   { label: "BBQ hut", href: "/bbq-hut" },
-  { label: "Hot tub & sauna", href: "/hot-tub-sauna" },
-  { label: "The view", href: "/the-view" },
+  { label: "Hot tub", href: "/hot-tub-sauna" },
+  { label: "View", href: "/the-view" },
   { label: "Nearby", href: "/whats-nearby" },
   { label: "Gallery", href: "#gallery" },
   { label: "Contact", href: "#contact" },

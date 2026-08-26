@@ -58,38 +58,38 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex">
-          {nav.map((item) =>
-            item.href.startsWith("#") ? (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-sm text-oat-100/75 transition-colors hover:text-oat-50"
-              >
+        <nav className="hidden items-center gap-5 xl:flex">
+          {nav.map((item) => {
+            const isContact = item.label === "Contact";
+            const linkClass = cn(
+              "whitespace-nowrap text-sm transition-colors",
+              isContact
+                ? "font-semibold text-lamp-400 hover:text-lamp-300"
+                : "text-oat-100/75 hover:text-oat-50",
+            );
+
+            return item.href.startsWith("#") ? (
+              <a key={item.href} href={item.href} className={linkClass}>
                 {item.label}
               </a>
             ) : (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm text-oat-100/75 transition-colors hover:text-oat-50"
-              >
+              <Link key={item.href} href={item.href} className={linkClass}>
                 {item.label}
               </Link>
-            ),
-          )}
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-3">
           <a
             href={site.phoneHref}
-            className="hidden text-sm text-oat-100/75 transition-colors hover:text-oat-50 md:block"
+            className="hidden whitespace-nowrap text-sm font-semibold text-lamp-400 transition-colors hover:text-lamp-300 md:block"
           >
             {site.phone}
           </a>
           <a
             href="#book"
-            className="hidden rounded-full bg-lamp-500 px-5 py-2.5 text-sm font-semibold text-loch-950 transition-all hover:bg-lamp-400 hover:shadow-glow sm:block"
+            className="hidden whitespace-nowrap rounded-full bg-lamp-500 px-5 py-2.5 text-sm font-semibold text-loch-950 transition-all hover:bg-lamp-400 hover:shadow-glow sm:block"
           >
             Check dates
           </a>
@@ -98,7 +98,7 @@ export function Header() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
-            className="grid h-10 w-10 place-items-center rounded-full border border-oat-50/20 text-oat-50 lg:hidden"
+            className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-oat-50/20 text-oat-50 xl:hidden"
           >
             <span className="relative block h-3 w-4">
               <span
@@ -131,11 +131,17 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-oat-50/10 bg-loch-950/95 backdrop-blur-xl lg:hidden"
+            className="overflow-hidden border-t border-oat-50/10 bg-loch-950/95 backdrop-blur-xl xl:hidden"
           >
             <nav className="container-page flex flex-col py-4">
-              {nav.map((item, i) =>
-                item.href.startsWith("#") ? (
+              {nav.map((item, i) => {
+                const isContact = item.label === "Contact";
+                const itemClass = cn(
+                  "block py-4 font-display text-2xl",
+                  isContact ? "text-lamp-400" : "text-oat-50",
+                );
+
+                return item.href.startsWith("#") ? (
                   <motion.a
                     key={item.href}
                     href={item.href}
@@ -143,7 +149,7 @@ export function Header() {
                     initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.05 + i * 0.04 }}
-                    className="border-b border-oat-50/5 py-4 font-display text-2xl text-oat-50 last:border-0"
+                    className={cn(itemClass, "border-b border-oat-50/5 last:border-0")}
                   >
                     {item.label}
                   </motion.a>
@@ -155,16 +161,12 @@ export function Header() {
                     transition={{ delay: 0.05 + i * 0.04 }}
                     className="border-b border-oat-50/5 last:border-0"
                   >
-                    <Link
-                      href={item.href}
-                      onClick={() => setOpen(false)}
-                      className="block py-4 font-display text-2xl text-oat-50"
-                    >
+                    <Link href={item.href} onClick={() => setOpen(false)} className={itemClass}>
                       {item.label}
                     </Link>
                   </motion.div>
-                ),
-              )}
+                );
+              })}
               <a
                 href="#book"
                 onClick={() => setOpen(false)}
@@ -174,7 +176,7 @@ export function Header() {
               </a>
               <a
                 href={site.phoneHref}
-                className="mt-3 py-2 text-center text-sm text-oat-100/70"
+                className="mt-3 py-2 text-center text-sm font-semibold text-lamp-400"
               >
                 {site.phone}
               </a>

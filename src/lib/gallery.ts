@@ -7,6 +7,8 @@ import {
   saunaPhotos,
   viewPhotos,
   nearbyPhotos,
+  rosePodPhotos,
+  thistlePodPhotos,
   type Photo,
 } from "@/data/media";
 
@@ -34,6 +36,8 @@ function fallbackGallery(): GalleryImage[] {
   const groups: [Photo[], string][] = [
     [exteriorPhotos, "pods"],
     [insidePhotos, "inside"],
+    [rosePodPhotos, "rose"],
+    [thistlePodPhotos, "thistle"],
     [bbqHutPhotos, "bbq hut"],
     [hotTubPhotos, "hot tub"],
     [saunaPhotos, "sauna"],

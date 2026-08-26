@@ -77,6 +77,7 @@ export default async function PodPage({
     content,
     availability,
     insideImages,
+    podImages,
     bbqImages,
     hotTubImages,
     saunaImages,
@@ -87,6 +88,7 @@ export default async function PodPage({
     getContent().catch(() => ({}) as Record<string, ContentBlock>),
     getAvailabilitySummary(),
     getGalleryWithFallback("inside"),
+    getGalleryWithFallback(slug),
     getGalleryWithFallback("bbq hut"),
     getGalleryWithFallback("hot tub"),
     getGalleryWithFallback("sauna"),
@@ -99,7 +101,8 @@ export default async function PodPage({
   const isThistle = pod.slug === "thistle";
   const otherPod = allPods.find((p) => p.slug !== pod.slug && p.is_active);
 
-  const insidePhotos = toPhotos(insideImages);
+  // This pod's own photos first, then the shared inside-the-pod set.
+  const insidePhotos = [...toPhotos(podImages), ...toPhotos(insideImages)];
   const bbqHutPhotos = toPhotos(bbqImages);
   const extrasPhotos = toPhotos([...hotTubImages, ...saunaImages]);
   const viewPhotos = toPhotos(viewImages);

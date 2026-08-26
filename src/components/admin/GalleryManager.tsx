@@ -13,6 +13,8 @@ const CATEGORIES = [
   "general",
   "pods",
   "inside",
+  "rose",
+  "thistle",
   "bbq hut",
   "hot tub",
   "sauna",

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 
@@ -13,6 +14,8 @@ type Props = {
   flip?: boolean;
   tone?: "oat" | "loch";
   footnote?: string;
+  moreHref?: string;
+  moreLabel?: string;
 };
 
 export function FeatureSection({
@@ -26,6 +29,8 @@ export function FeatureSection({
   flip = false,
   tone = "oat",
   footnote,
+  moreHref,
+  moreLabel = "Read more",
 }: Props) {
   const dark = tone === "loch";
 
@@ -143,6 +148,29 @@ export function FeatureSection({
               >
                 {footnote}
               </p>
+            </Reveal>
+          ) : null}
+
+          {moreHref ? (
+            <Reveal delay={0.3}>
+              <Link
+                href={moreHref}
+                className={cn(
+                  "mt-6 inline-flex items-center gap-1.5 text-sm font-semibold transition-colors",
+                  dark ? "text-lamp-400 hover:text-lamp-300" : "text-lamp-600 hover:text-lamp-500",
+                )}
+              >
+                {moreLabel}
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path
+                    d="M3 8h10M9 4l4 4-4 4"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
             </Reveal>
           ) : null}
         </div>

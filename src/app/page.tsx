@@ -17,6 +17,7 @@ import {
   exteriorPhotos,
   insidePhotos,
   bbqHutPhotos,
+  hotTubPhotos,
   viewPhotos,
 } from "@/data/media";
 import { fallbackContent } from "@/data/content";
@@ -51,6 +52,7 @@ export default async function HomePage() {
   const pod = block(content, "pod", exteriorPhotos[2].src);
   const inside = block(content, "inside", insidePhotos[0].src);
   const bbq = block(content, "bbq", bbqHutPhotos[0].src);
+  const extras = block(content, "extras", hotTubPhotos[0].src);
   const view = block(content, "view", viewPhotos[0].src);
   const contact = block(content, "contact");
 
@@ -133,6 +135,25 @@ export default async function HomePage() {
             "Marshmallows and toasting sticks provided",
           ]}
           footnote="The BBQ hut can be added to your stay for an additional cost — get in touch to secure it for your dates."
+          moreHref="/bbq-hut"
+        />
+
+        <FeatureSection
+          id="extras"
+          eyebrow="Exclusive to the Thistle Pod"
+          heading={extras.heading}
+          body={extras.body}
+          imageUrl={extras.image}
+          imageAlt="The Thistle Pod's hot tub, bubbling with farmland behind it"
+          flip
+          tone="loch"
+          points={[
+            "Private hot tub, ready before you arrive",
+            "Scandinavian wood-fired barrel sauna",
+            "Both exclusive to the Thistle Pod",
+            "Towels and robes provided",
+          ]}
+          moreHref="/hot-tub-sauna"
         />
 
         <FeatureSection
@@ -142,7 +163,7 @@ export default async function HomePage() {
           body={view.body}
           imageUrl={view.image}
           imageAlt="The view south from the pods across open countryside"
-          flip
+          moreHref="/the-view"
         />
 
         <ThingsToDo />

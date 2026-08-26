@@ -31,12 +31,21 @@ export function Footer() {
             <ul className="space-y-2.5">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className="text-sm text-oat-100/70 transition-colors hover:text-lamp-400"
-                  >
-                    {item.label}
-                  </a>
+                  {item.href.startsWith("#") ? (
+                    <a
+                      href={item.href}
+                      className="text-sm text-oat-100/70 transition-colors hover:text-lamp-400"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-sm text-oat-100/70 transition-colors hover:text-lamp-400"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

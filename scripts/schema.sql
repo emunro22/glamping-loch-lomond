@@ -59,12 +59,12 @@ CREATE INDEX IF NOT EXISTS enquiries_status_idx ON enquiries (status, created_at
 INSERT INTO pods (slug, name, tagline, description, features, bookable_id, rate_type_id, sleeps, sort_order)
 VALUES
   ('rose', 'The Rose Pod', 'The one with the BBQ hut',
-   'The Rose Pod has sole access to our Scandinavian BBQ hut, so you can cook outdoors whatever the sky is doing. Inside it is the same story as its twin: a proper double bed, a pull-out sofa bed, and an en-suite with a walk-in shower.',
-   '["Exclusive use of the BBQ hut (addable to your stay)","Double bed plus double pull-out sofa bed","En-suite with walk-in shower","Electric frying pan, kettle and toaster","South-facing decking"]'::jsonb,
+   'The Rose Pod has sole access to our Scandinavian BBQ hut, so you can cook outdoors whatever the sky is doing — even a rainy Highland evening feels like an adventure with the charcoal going and a roof overhead. Inside it is the same story as its twin: a proper double bed, a pull-out sofa bed, and an en-suite with a walk-in shower. Step outside and you are straight onto your own south-facing decking, looking out over the fields we still work as a family.',
+   '["Exclusive use of the BBQ hut (addable to your stay)","Double bed plus double pull-out sofa bed","En-suite with walk-in shower","Electric frying pan, kettle and toaster","South-facing decking","Dog friendly, with farm walks from the door"]'::jsonb,
    '75351', '70916', 4, 1),
   ('thistle', 'The Thistle Pod', 'The one with the hot tub and sauna',
-   'The Thistle Pod has its own hot tub and sole access to our Scandinavian barrel sauna, tucked into a quiet corner with an uninterrupted run of countryside in front of it. Inside it is the same story as its twin: a proper double bed, a pull-out sofa bed, and an en-suite with a walk-in shower.',
-   '["Own hot tub and exclusive access to the sauna","Double bed plus double pull-out sofa bed","En-suite with walk-in shower","Two-ring cooker top, air fryer, kettle and toaster","South-facing decking"]'::jsonb,
+   'The Thistle Pod has its own hot tub and sole access to our Scandinavian barrel sauna, tucked into a quiet corner with an uninterrupted run of countryside in front of it — book a stay here and the hardest decision most evenings is hot tub or sauna first. Inside it is the same story as its twin: a proper double bed, a pull-out sofa bed, and an en-suite with a walk-in shower. The tub is up to temperature and waiting before you arrive, so you can be in it within minutes of pulling up.',
+   '["Own hot tub and exclusive access to the sauna","Double bed plus double pull-out sofa bed","En-suite with walk-in shower","Two-ring cooker top, air fryer, kettle and toaster","South-facing decking","Dog friendly, with farm walks from the door"]'::jsonb,
    '75350', '70916', 4, 2)
 ON CONFLICT (slug) DO NOTHING;
 
@@ -74,15 +74,17 @@ INSERT INTO site_content (key, heading, body) VALUES
   ('about', 'Three generations, one farm',
    'Tucked away on our family-run Ballagan Farm, our glamping pods offer a warm, welcoming escape in the heart of one of Scotland''s most stunning landscapes. With three generations living and working on the farm, Glamping Loch Lomond is truly a labour of love, and every detail reflects that.'),
   ('pod', 'The pod',
-   'All pods have their own electricity and water supply. Fully furnished, with a double bed and a double pull-out sofa bed. Each pod has an en-suite bathroom with a walk-in shower.'),
+   'All pods have their own electricity and water supply. Fully furnished, with a double bed and a double pull-out sofa bed. Each pod has an en-suite bathroom with a walk-in shower. Each one is lined in warm timber from floor to curved ceiling, with an electric panel heater to keep the chill off, so they are just as cosy on a wet October evening as they are in July.'),
   ('inside', 'Inside the pod',
-   'The kitchen comes with everything you need: an air fryer, kettle and toaster, plus a two-ring cooker top in the Thistle Pod or an electric frying pan in the Rose Pod. All crockery and utensils are supplied in each pod. Bedding, towels, robes and slippers are included in your stay.'),
+   'The kitchen comes with everything you need: an air fryer, kettle and toaster, plus a two-ring cooker top in the Thistle Pod or an electric frying pan in the Rose Pod. All crockery and utensils are supplied in each pod. Bedding, towels, robes and slippers are included in your stay. There is a flat-screen TV in the corner for a lazy evening in, and a proper dining table if you would rather sit down to eat than balance a plate on your knee.'),
   ('bbq', 'The BBQ hut',
-   'A Scandinavian-inspired BBQ hut, available exclusively to the Rose Pod. A central charcoal grill with a built-in chimney sits under a circular wooden dining table, with cushioned bench seating around the edge. To the rear you will find a prep area with a fridge and all the cooking tools you need.'),
+   'A Scandinavian-inspired BBQ hut, available exclusively to the Rose Pod. A central charcoal grill with a built-in chimney sits under a circular wooden dining table, with cushioned bench seating around the edge. To the rear you will find a prep area with a fridge and all the cooking tools you need. It is a proper wooden hut with fairy lights strung along the beams, big enough for the whole party to gather round the fire while dinner cooks — plates, glasses and condiments are all provided, so all you need to bring is the food.'),
   ('extras', 'Hot tub & sauna',
-   'A private hot tub and a Scandinavian-style barrel sauna, both exclusive to the Thistle Pod.'),
+   'A private hot tub and a Scandinavian-style barrel sauna, both exclusive to the Thistle Pod. Both sit out on the decking with the same open farmland view as the rest of the pod, and the tub is topped up and ready to go before you arrive — towels and robes are provided, so all you need to bring is yourself.'),
   ('view', 'The view',
-   'You are right out in the great outdoors. Situated in a rural setting, the pods face south so you can make the most of the sun in the beautiful Scottish countryside.'),
+   'You are right out in the great outdoors. Situated in a rural setting, the pods face south so you can make the most of the sun in the beautiful Scottish countryside. Ballagan Farm still runs sheep and cattle in the fields around the pods, so do not be surprised to wake up to them grazing just beyond the fence — it is about as far from a caravan park as glamping gets.'),
+  ('nearby', 'Explore beyond the farm gate',
+   'Ballagan Farm sits inside Loch Lomond and The Trossachs, Scotland''s first National Park, so you are never more than half an hour from a loch shore, a hill walk or a proper Highland view. Here is what is worth the drive, and how long it actually takes to get there.'),
   ('contact', 'Come and stay',
    'Questions about dates, the BBQ hut, or bringing the dog? Send us a note and we will get straight back to you.')
 ON CONFLICT (key) DO NOTHING;

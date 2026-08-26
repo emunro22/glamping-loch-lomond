@@ -19,8 +19,7 @@ const nextConfig: NextConfig = {
       { source: "/footer/privacy-policy", destination: "/privacy-policy", permanent: true },
       { source: "/book-now", destination: "/#book", permanent: true },
       { source: "/about", destination: "/#about", permanent: true },
-      { source: "/things-to-do", destination: "/#things-to-do", permanent: true },
-      { source: "/bbq-hut", destination: "/#bbq-hut", permanent: true },
+      { source: "/things-to-do", destination: "/whats-nearby", permanent: true },
       { source: "/gallery", destination: "/#gallery", permanent: true },
     ];
   },

@@ -11,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
+    ...["/bbq-hut", "/hot-tub-sauna", "/the-view", "/whats-nearby"].map((path) => ({
+      url: `${site.url}${path}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
     {
       url: `${site.url}/terms-of-use`,
       lastModified: now,

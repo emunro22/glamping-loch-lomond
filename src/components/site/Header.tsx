@@ -58,16 +58,26 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
-          {nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm text-oat-100/75 transition-colors hover:text-oat-50"
-            >
-              {item.label}
-            </a>
-          ))}
+        <nav className="hidden items-center gap-6 lg:flex">
+          {nav.map((item) =>
+            item.href.startsWith("#") ? (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-sm text-oat-100/75 transition-colors hover:text-oat-50"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm text-oat-100/75 transition-colors hover:text-oat-50"
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -124,19 +134,37 @@ export function Header() {
             className="overflow-hidden border-t border-oat-50/10 bg-loch-950/95 backdrop-blur-xl lg:hidden"
           >
             <nav className="container-page flex flex-col py-4">
-              {nav.map((item, i) => (
-                <motion.a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  initial={{ opacity: 0, x: -12 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 + i * 0.04 }}
-                  className="border-b border-oat-50/5 py-4 font-display text-2xl text-oat-50 last:border-0"
-                >
-                  {item.label}
-                </motion.a>
-              ))}
+              {nav.map((item, i) =>
+                item.href.startsWith("#") ? (
+                  <motion.a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    initial={{ opacity: 0, x: -12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.05 + i * 0.04 }}
+                    className="border-b border-oat-50/5 py-4 font-display text-2xl text-oat-50 last:border-0"
+                  >
+                    {item.label}
+                  </motion.a>
+                ) : (
+                  <motion.div
+                    key={item.href}
+                    initial={{ opacity: 0, x: -12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.05 + i * 0.04 }}
+                    className="border-b border-oat-50/5 last:border-0"
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className="block py-4 font-display text-2xl text-oat-50"
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                ),
+              )}
               <a
                 href="#book"
                 onClick={() => setOpen(false)}

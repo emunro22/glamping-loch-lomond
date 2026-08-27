@@ -28,9 +28,14 @@ function toPhotos(images: GalleryImage[]): Photo[] {
   return images.map((image) => ({ src: image.url, alt: image.alt }));
 }
 
-function Point({ children }: { children: ReactNode }) {
+function Point({ children, dark }: { children: ReactNode; dark?: boolean }) {
   return (
-    <li className="flex items-start gap-3 text-sm leading-relaxed text-loch-800/80">
+    <li
+      className={cn(
+        "flex items-start gap-3 text-sm leading-relaxed",
+        dark ? "text-oat-100/80" : "text-loch-800/80",
+      )}
+    >
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="mt-1 shrink-0 text-lamp-500">
         <path d="M2 7.5l3.2 3.2L12 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
@@ -123,7 +128,9 @@ export default async function HotTubSaunaPage() {
               <Reveal delay={0.1}>
                 <ul className="mt-8 grid max-w-2xl gap-x-8 gap-y-3 sm:grid-cols-2">
                   {section.points.map((point) => (
-                    <Point key={point}>{point}</Point>
+                    <Point key={point} dark={section.dark}>
+                      {point}
+                    </Point>
                   ))}
                 </ul>
               </Reveal>

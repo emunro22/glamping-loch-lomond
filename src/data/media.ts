@@ -36,7 +36,6 @@ export const roseHotTubPhotos: Photo[] = [
   { src: "/hot-tub-privacy-screen.jpg", alt: "The Rose Pod hot tub screened by young hedging and timber fencing" },
   { src: "/hot-tub-with-loungers.jpg", alt: "The Rose Pod hot tub with wooden loungers and a chiminea alongside" },
   { src: "/rose-pod-hot-tub-1.jpg", alt: "The Rose Pod's hot tub with the umbrella and chiminea on the patio" },
-  { src: "/rose-pod-hot-tub-2.jpg", alt: "The Rose Pod hot tub screened by young hedging and timber fencing" },
 ];
 
 /** Thistle has its own hot tub, set under a covered gazebo. */

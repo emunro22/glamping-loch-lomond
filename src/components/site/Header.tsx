@@ -87,12 +87,12 @@ export function Header() {
           >
             {site.phone}
           </a>
-          <a
-            href="#book"
+          <Link
+            href="/#book"
             className="hidden whitespace-nowrap rounded-full bg-lamp-500 px-5 py-2.5 text-sm font-semibold text-loch-950 transition-all hover:bg-lamp-400 hover:shadow-glow sm:block"
           >
             Check dates
-          </a>
+          </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -167,13 +167,13 @@ export function Header() {
                   </motion.div>
                 );
               })}
-              <a
-                href="#book"
+              <Link
+                href="/#book"
                 onClick={() => setOpen(false)}
                 className="mt-5 rounded-full bg-lamp-500 px-6 py-3.5 text-center text-sm font-semibold text-loch-950"
               >
                 Check dates
-              </a>
+              </Link>
               <a
                 href={site.phoneHref}
                 className="mt-3 py-2 text-center text-sm font-semibold text-lamp-400"

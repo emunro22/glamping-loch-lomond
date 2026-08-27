@@ -22,14 +22,14 @@ export const site = {
 } as const;
 
 export const nav = [
-  { label: "Pods", href: "#pods" },
-  { label: "Inside", href: "#inside" },
+  { label: "Pods", href: "/#pods" },
+  { label: "Inside", href: "/#inside" },
   { label: "BBQ hut", href: "/bbq-hut" },
   { label: "Hot tub", href: "/hot-tub-sauna" },
   { label: "View", href: "/the-view" },
   { label: "Nearby", href: "/whats-nearby" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Contact", href: "/#contact" },
 ] as const;
 
 /**

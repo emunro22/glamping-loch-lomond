@@ -22,7 +22,7 @@ export const fallbackContent: Record<string, { heading: string; body: string }> 
   },
   extras: {
     heading: "Hot tub & sauna",
-    body: "A private hot tub and a Scandinavian-style barrel sauna, both exclusive to the Thistle Pod. Both sit out on the decking with the same open farmland view as the rest of the pod, and the tub is topped up and ready to go before you arrive — towels and robes are provided, so all you need to bring is yourself.",
+    body: "Both pods have their own hot tub, set up a little differently — the Rose Pod's sits open under the sky, the Thistle Pod's under a covered gazebo. The Thistle Pod also has sole access to our Scandinavian barrel sauna.",
   },
   view: {
     heading: "The view",

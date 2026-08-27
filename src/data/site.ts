@@ -62,35 +62,35 @@ export const pods: Pod[] = [
     rateTypeId: DEFAULT_RATE_TYPE_ID,
     sleeps: 4,
     description:
-      "The Rose Pod has sole access to our Scandinavian BBQ hut, so you can cook outdoors whatever the sky is doing — even a rainy Highland evening feels like an adventure with the charcoal going and a roof overhead. Inside it's the same story as its twin: a proper double bed, a pull-out sofa bed, and an en-suite with a walk-in shower. Step outside and you're straight onto your own south-facing decking, looking out over the fields we still work as a family.",
+      "The Rose Pod has its own hot tub right on the decking, open to the sky, plus sole access to our Scandinavian BBQ hut, so you can cook outdoors whatever the weather is doing. Inside it's the same story as its twin: a proper double bed, a pull-out sofa bed, and an en-suite with a walk-in shower.",
     features: [
+      "Own hot tub, open-air on the decking",
       "Exclusive use of the BBQ hut (addable to your stay)",
       "Double bed plus double pull-out sofa bed",
       "En-suite with walk-in shower",
       "Electric frying pan, kettle and toaster",
-      "South-facing decking",
       "Dog friendly, with farm walks from the door",
     ],
-    highlight: "BBQ hut available",
+    highlight: "BBQ hut & hot tub",
   },
   {
     slug: "thistle",
     name: "The Thistle Pod",
-    tagline: "The one with the hot tub and sauna",
+    tagline: "The one with the sauna",
     bookableId: "75350",
     rateTypeId: DEFAULT_RATE_TYPE_ID,
     sleeps: 4,
     description:
-      "The Thistle Pod has its own hot tub and sole access to our Scandinavian barrel sauna, tucked into a quiet corner with an uninterrupted run of countryside in front of it — book a stay here and the hardest decision most evenings is hot tub or sauna first. Inside it's the same story as its twin: a proper double bed, a pull-out sofa bed, and an en-suite with a walk-in shower. The tub is up to temperature and waiting before you arrive, so you can be in it within minutes of pulling up.",
+      "The Thistle Pod has its own hot tub, set under a covered gazebo, and sole access to our Scandinavian barrel sauna, tucked into a quiet corner with an uninterrupted run of countryside in front of it. Inside it's the same story as its twin: a proper double bed, a pull-out sofa bed, and an en-suite with a walk-in shower.",
     features: [
-      "Own hot tub and exclusive access to the sauna",
+      "Own hot tub under a covered gazebo",
+      "Exclusive access to the barrel sauna",
       "Double bed plus double pull-out sofa bed",
       "En-suite with walk-in shower",
       "Two-ring cooker top, air fryer, kettle and toaster",
-      "South-facing decking",
       "Dog friendly, with farm walks from the door",
     ],
-    highlight: "Hot tub & sauna included",
+    highlight: "Hot tub & sauna",
   },
 ];
 

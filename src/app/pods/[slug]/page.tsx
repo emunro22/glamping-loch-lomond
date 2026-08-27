@@ -90,7 +90,7 @@ export default async function PodPage({
     getGalleryWithFallback("inside"),
     getGalleryWithFallback(slug),
     getGalleryWithFallback("bbq hut"),
-    getGalleryWithFallback("hot tub"),
+    getGalleryWithFallback(`${slug} hot tub`),
     getGalleryWithFallback("sauna"),
     getGalleryWithFallback("views"),
   ]);
@@ -104,12 +104,13 @@ export default async function PodPage({
   // This pod's own photos first, then the shared inside-the-pod set.
   const insidePhotos = [...toPhotos(podImages), ...toPhotos(insideImages)];
   const bbqHutPhotos = toPhotos(bbqImages);
-  const extrasPhotos = toPhotos([...hotTubImages, ...saunaImages]);
+  const extrasPhotos = isThistle
+    ? [...toPhotos(hotTubImages), ...toPhotos(saunaImages)]
+    : toPhotos(hotTubImages);
   const viewPhotos = toPhotos(viewImages);
 
   const inside = block(content, "inside");
   const bbq = block(content, "bbq");
-  const extras = block(content, "extras");
   const view = block(content, "view");
   const contact = block(content, "contact");
 
@@ -168,34 +169,32 @@ export default async function PodPage({
           <PodSection
             id="pod-extras"
             eyebrow="Exclusive to the Thistle Pod"
-            heading={extras.heading}
-            body={extras.body}
+            heading="Hot tub & sauna"
+            body="The Thistle Pod has its own hot tub, set under a covered gazebo, and sole access to our Scandinavian barrel sauna — both a few steps from your door."
             points={[
-              "Private hot tub, ready for you on arrival",
-              "Scandinavian barrel sauna",
-              "Towels provided",
-              "Included only with the Thistle Pod",
+              "Private hot tub under a covered gazebo",
+              "Exclusive access to the barrel sauna",
+              "Ready and up to temperature on arrival",
+              "Towels and robes provided",
             ]}
             photos={extrasPhotos}
             footnote="Get in touch for availability — we'll have it ready before you arrive."
           />
         ) : (
-          <section className="bg-loch-900 py-14 on-dark">
-            <div className="container-page">
-              <Reveal className="flex flex-wrap items-center justify-between gap-6 rounded-[2rem] border border-oat-50/12 bg-loch-950/40 px-8 py-8 sm:px-10">
-                <div>
-                  <p className="eyebrow mb-2 text-lamp-400">Fancy a hot tub or sauna?</p>
-                  <p className="max-w-lg text-oat-100/75">
-                    Our hot tub and Scandinavian barrel sauna come exclusively
-                    with the Thistle Pod.
-                  </p>
-                </div>
-                <ButtonLink href="/pods/thistle" variant="light">
-                  See the Thistle Pod
-                </ButtonLink>
-              </Reveal>
-            </div>
-          </section>
+          <PodSection
+            id="pod-extras"
+            eyebrow="Exclusive to the Rose Pod"
+            heading="Your own hot tub"
+            body="The Rose Pod has its own hot tub, right out on the decking under the open sky — up to temperature and ready before you arrive."
+            points={[
+              "Private hot tub, open to the sky",
+              "Ready and up to temperature on arrival",
+              "Towels and robes provided",
+              "Right on your own decking",
+            ]}
+            photos={extrasPhotos}
+            footnote="Fancy a sauna too? That one's exclusive to the Thistle Pod."
+          />
         )}
 
         <PodSection
@@ -219,7 +218,7 @@ export default async function PodPage({
             </Reveal>
             <Reveal delay={0.15} className="mt-8">
               <Link
-                href="/#things-to-do"
+                href="/whats-nearby"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-lamp-600 transition-colors hover:text-lamp-500"
               >
                 See what's nearby

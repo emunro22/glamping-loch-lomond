@@ -30,14 +30,25 @@ export const bbqHutPhotos: Photo[] = [
   { src: "/bbq-hut-steaks-and-skewers.jpg", alt: "Steaks and skewers grilling in the BBQ hut" },
 ];
 
-export const hotTubPhotos: Photo[] = [
-  { src: "/1000018196.jpg", alt: "The hot tub, bubbling, with open farmland behind it" },
-  { src: "/14140.jpg", alt: "Bench seating beside the hot tub on the patio" },
-  { src: "/hot-tub-open-sky.jpg", alt: "The Thistle Pod hot tub bubbling under an open sky, farmland behind" },
-  { src: "/hot-tub-privacy-screen.jpg", alt: "The Thistle Pod hot tub screened by young hedging and timber fencing" },
-  { src: "/hot-tub-with-loungers.jpg", alt: "The Thistle Pod hot tub with wooden loungers and a chiminea alongside" },
+/** Rose has its own hot tub, open to the sky. */
+export const roseHotTubPhotos: Photo[] = [
+  { src: "/hot-tub-open-sky.jpg", alt: "The Rose Pod hot tub bubbling under an open sky, farmland behind" },
+  { src: "/hot-tub-privacy-screen.jpg", alt: "The Rose Pod hot tub screened by young hedging and timber fencing" },
+  { src: "/hot-tub-with-loungers.jpg", alt: "The Rose Pod hot tub with wooden loungers and a chiminea alongside" },
+  { src: "/rose-pod-hot-tub-1.jpg", alt: "The Rose Pod's hot tub with the umbrella and chiminea on the patio" },
+  { src: "/rose-pod-hot-tub-2.jpg", alt: "The Rose Pod hot tub screened by young hedging and timber fencing" },
+];
+
+/** Thistle has its own hot tub, set under a covered gazebo. */
+export const thistleHotTubPhotos: Photo[] = [
+  { src: "/1000018196.jpg", alt: "The Thistle Pod hot tub, bubbling, with open farmland behind it" },
+  { src: "/14140.jpg", alt: "Bench seating beside the Thistle Pod hot tub on the patio" },
   { src: "/hot-tub-under-gazebo.jpg", alt: "The Thistle Pod hot tub under its covered gazebo, farmland beyond" },
   { src: "/hot-tub-jets.jpg", alt: "Jets bubbling in the Thistle Pod hot tub" },
+  { src: "/thistle-pod-hot-tub-1.jpg", alt: "The Thistle Pod hot tub under its gazebo, with rattan seating alongside" },
+  { src: "/thistle-pod-hot-tub-2.jpg", alt: "Jets arcing across the Thistle Pod hot tub under the gazebo" },
+  { src: "/thistle-pod-hot-tub-3.jpg", alt: "The Thistle Pod hot tub and gazebo, with the second pod behind" },
+  { src: "/thistle-pod-hot-tub-4.jpg", alt: "Water jets arcing across the Thistle Pod hot tub" },
 ];
 
 export const saunaPhotos: Photo[] = [
@@ -56,27 +67,27 @@ export const nearbyPhotos: Photo[] = [
 
 /** Photos specific to each named pod — its own bedroom, living area and small details. */
 export const rosePodPhotos: Photo[] = [
-  { src: "/rose-pod-bedroom.jpg", alt: "Inside the Rose Pod: the double bed with sage green furnishings" },
+  { src: "/rose-pod-patio-chiminea.jpg", alt: "The Rose Pod's patio with a chiminea, live-edge bench and farmland view" },
+  { src: "/thistle-pod-bedroom.jpg", alt: "Inside the Rose Pod: the double bed under the curved timber ceiling" },
+  { src: "/thistle-pod-robes.jpg", alt: "Waffle robes hung on an antler hook in the Rose Pod" },
+  { src: "/thistle-pod-tv-corner.jpg", alt: "The wall-mounted TV and side table in the Rose Pod" },
+  { src: "/thistle-pod-living-area.jpg", alt: "The Rose Pod's sofa bed, with the double bed beyond" },
+  { src: "/thistle-pod-welcome-pack.jpg", alt: "A welcome pack of Ballagan Farm coasters, cups and a guest folder" },
+  { src: "/thistle-pod-highland-cow-cushion.jpg", alt: "A Highland cow cushion on the Rose Pod sofa" },
+  { src: "/thistle-pod-towels.jpg", alt: "Folded towels and a mirror in the Rose Pod" },
 ];
 
 export const thistlePodPhotos: Photo[] = [
-  { src: "/thistle-pod-deck-and-view.jpg", alt: "The Thistle Pod's deck with a live-edge oak bench, looking out over the farm" },
-  { src: "/thistle-pod-bedroom.jpg", alt: "Inside the Thistle Pod: the double bed under the curved timber ceiling" },
-  { src: "/thistle-pod-robes.jpg", alt: "Waffle robes hung on an antler hook in the Thistle Pod" },
-  { src: "/thistle-pod-tv-corner.jpg", alt: "The wall-mounted TV and side table in the Thistle Pod" },
-  { src: "/thistle-pod-living-area.jpg", alt: "The Thistle Pod's sofa bed, with the double bed beyond" },
+  { src: "/rose-pod-bedroom.jpg", alt: "Inside the Thistle Pod: the double bed with sage green furnishings" },
   { src: "/thistle-pod-decking.jpg", alt: "The Thistle Pod's composite decking and entrance" },
-  { src: "/thistle-pod-welcome-pack.jpg", alt: "A welcome pack of Ballagan Farm coasters, cups and a guest folder" },
-  { src: "/thistle-pod-highland-cow-cushion.jpg", alt: "A Highland cow cushion on the Thistle Pod sofa" },
-  { src: "/thistle-pod-towels.jpg", alt: "Folded towels and a mirror in the Thistle Pod" },
 ];
 
 export const heroPhoto = exteriorPhotos[0];
 
 /** One representative exterior photo per pod, so the two cards don't repeat. */
 export const podHeroPhoto: Record<string, Photo> = {
-  rose: exteriorPhotos[2],
-  thistle: thistlePodPhotos[0],
+  rose: rosePodPhotos[0],
+  thistle: exteriorPhotos[0],
 };
 
 export const logo = { src: "/logo.jpeg", alt: "Ballagan Farm Glamping Pods" };

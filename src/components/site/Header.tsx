@@ -30,7 +30,7 @@ export function Header() {
       className={cn(
         "on-dark fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-oat-50/10 bg-loch-950/85 backdrop-blur-xl"
+          ? "border-b border-oat-50/10 bg-loch-800/85 backdrop-blur-xl"
           : "bg-transparent",
       )}
     >
@@ -131,7 +131,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-oat-50/10 bg-loch-950/95 backdrop-blur-xl xl:hidden"
+            className="overflow-hidden border-t border-oat-50/10 bg-loch-800/95 backdrop-blur-xl xl:hidden"
           >
             <nav className="container-page flex flex-col py-4">
               {nav.map((item, i) => {

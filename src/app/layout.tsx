@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Karla } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/data/site";
+import { FARM_COORDS } from "@/lib/maps";
+import { heroPhoto } from "@/data/media";
 import "./globals.css";
 
 const display = Fraunces({
@@ -53,14 +56,20 @@ export const viewport: Viewport = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LodgingBusiness",
+  "@type": ["LodgingBusiness", "LocalBusiness"],
   name: site.name,
   legalName: site.legalName,
   url: site.url,
   telephone: site.phone,
   email: site.email,
+  image: `${site.url}${heroPhoto.src}`,
   priceRange: "££",
   petsAllowed: true,
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: FARM_COORDS.lat,
+    longitude: FARM_COORDS.lon,
+  },
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.line1,
@@ -106,6 +115,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <Analytics />
       </body>
     </html>
   );

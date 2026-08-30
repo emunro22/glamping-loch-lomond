@@ -8,11 +8,17 @@ type Props = {
   heading: string;
   body: string;
   imageUrl?: string | null;
+  imageAlt?: string;
 };
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-export function Hero({ heading, body, imageUrl }: Props) {
+export function Hero({
+  heading,
+  body,
+  imageUrl,
+  imageAlt = "Glamping pods at Ballagan Farm, Loch Lomond",
+}: Props) {
   const reduce = useReducedMotion();
 
   const rise = (delay: number) =>
@@ -30,7 +36,7 @@ export function Hero({ heading, body, imageUrl }: Props) {
       {imageUrl ? (
         <Image
           src={imageUrl}
-          alt=""
+          alt={imageAlt}
           fill
           priority
           sizes="100vw"

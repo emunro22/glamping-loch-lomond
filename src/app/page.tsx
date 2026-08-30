@@ -4,6 +4,7 @@ import { FeatureSection } from "@/components/site/FeatureSection";
 import { PodShowcase } from "@/components/site/PodShowcase";
 import { ThingsToDo } from "@/components/site/ThingsToDo";
 import { Gallery } from "@/components/site/Gallery";
+import { FAQ } from "@/components/site/FAQ";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -61,7 +62,12 @@ export default async function HomePage() {
       <Header />
 
       <main id="main">
-        <Hero heading={hero.heading} body={hero.body} imageUrl={hero.image} />
+        <Hero
+          heading={hero.heading}
+          body={hero.body}
+          imageUrl={hero.image}
+          imageAlt={heroPhoto.alt}
+        />
 
         {/* Welcome — narrow measure, no image, lets the page breathe after the hero */}
         <section id="about" className="bg-oat-50 py-20 sm:py-28">
@@ -169,6 +175,8 @@ export default async function HomePage() {
         <ThingsToDo />
 
         <Gallery images={images} />
+
+        <FAQ />
 
         <Contact heading={contact.heading} body={contact.body} />
       </main>

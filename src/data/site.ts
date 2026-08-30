@@ -22,6 +22,7 @@ export const site = {
 } as const;
 
 export const nav = [
+  { label: "About", href: "/#about" },
   { label: "Pods", href: "/#pods" },
   { label: "Inside", href: "/#inside" },
   { label: "BBQ hut", href: "/bbq-hut" },

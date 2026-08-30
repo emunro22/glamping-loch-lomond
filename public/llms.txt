@@ -1,0 +1,34 @@
+# Glamping Loch Lomond
+
+> Two fully-equipped, en-suite glamping pods on a working family farm at Ballagan Farm, Gartocharn, inside Loch Lomond and The Trossachs — Scotland's first National Park. Dog friendly, south-facing, and bookable direct with no booking fee.
+
+## About
+
+Glamping Loch Lomond is run by a family on Ballagan Farm, a working farm with sheep and cattle, near Gartocharn on the shores of Loch Lomond. There are two pods: the Rose Pod and the Thistle Pod. Both are fully furnished with a double bed, a double pull-out sofa bed, an en-suite with a walk-in shower, their own hot tub, and their own electricity and water supply. Bedding, towels, robes and slippers are included.
+
+## The pods
+
+- **The Rose Pod** — sleeps 4. Has its own hot tub, open to the sky on the decking, and exclusive access to the Scandinavian-style BBQ hut (available as an add-on). Kitchen includes an electric frying pan, kettle and toaster.
+- **The Thistle Pod** — sleeps 4. Has its own hot tub under a covered gazebo, plus sole access to a Scandinavian barrel sauna. Kitchen includes a two-ring cooker top, air fryer, kettle and toaster.
+
+## Key facts
+
+- Location: Ballagan Farm, Gartocharn, Loch Lomond, G83 8SB, Scotland.
+- Check-in: 3pm. Check-out: 10am.
+- Dogs: welcome free of charge, up to two per pod.
+- Booking: direct through our booking system, linked from every page — no booking fee.
+- Contact: phone 07731 989987, email info@glampinglochlomond.co.uk.
+
+## Pages
+
+- / — homepage, overview of both pods, gallery, enquiry form.
+- /pods/rose and /pods/thistle — individual pod pages with photos and booking.
+- /bbq-hut — the Scandinavian BBQ hut, exclusive to the Rose Pod.
+- /hot-tub-sauna — details on the hot tubs and barrel sauna.
+- /the-view — the farmland and countryside surrounding the pods.
+- /whats-nearby — things to do around Loch Lomond and The Trossachs.
+
+## Contact
+
+Email: info@glampinglochlomond.co.uk
+Phone: 07731 989987

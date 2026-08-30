@@ -43,22 +43,22 @@ export function Header() {
           <span className="flex h-10 shrink-0 items-center rounded-xl bg-oat-50 px-2 py-1.5 shadow-sm ring-1 ring-loch-950/5 sm:h-11">
             <Image
               src="/logo-mark.png"
-              alt=""
+              alt={site.name}
               width={140}
               height={85}
               priority
               className="h-full w-auto object-contain"
             />
           </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-lg tracking-tight text-oat-50 sm:text-xl">
+          <span className="flex shrink-0 flex-col leading-none">
+            <span className="whitespace-nowrap font-display text-lg tracking-tight text-oat-50 sm:text-xl">
               Glamping Loch Lomond
             </span>
             <span className="eyebrow mt-1 text-lamp-400/80">Ballagan Farm</span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-5 xl:flex">
+        <nav className="hidden items-center gap-4 xl:flex">
           {nav.map((item) => {
             const isContact = item.label === "Contact";
             const linkClass = cn(

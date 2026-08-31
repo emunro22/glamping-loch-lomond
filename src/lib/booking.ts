@@ -1,6 +1,10 @@
-/** Every booking link on the site points here — the InnStyle enquiries page. */
-const BOOKING_URL =
-  "https://glampinglochlomond.innstyle.co.uk/enquiries/27472117?bo=16836&going_home=true";
+/**
+ * Every booking link on the site points here — InnStyle's live booking
+ * start screen, where the guest picks Rose or Thistle and their own dates.
+ * (Not a per-pod deep link: a fixed single-enquiry URL was tried and caused
+ * every visitor to land on the same stale pod/date, so this was reverted.)
+ */
+const BOOKING_URL = "https://glampinglochlomond.innstyle.co.uk/bliss/bookings/new";
 
 export type Occupancy = {
   adults: number;

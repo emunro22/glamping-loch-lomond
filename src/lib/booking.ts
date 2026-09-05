@@ -1,5 +1,5 @@
 /**
- * Every booking link on the site points here — InnStyle's live booking
+ * Every booking link on the site points here: InnStyle's live booking
  * start screen, where the guest picks Rose or Thistle and their own dates.
  * (Not a per-pod deep link: a fixed single-enquiry URL was tried and caused
  * every visitor to land on the same stale pod/date, so this was reverted.)
@@ -51,7 +51,7 @@ export function addDays(date: Date, days: number): Date {
   return next;
 }
 
-/** Tomorrow / the day after — sensible defaults for an empty date picker. */
+/** Tomorrow / the day after: sensible defaults for an empty date picker. */
 export function defaultStay(): { start: string; end: string } {
   const start = addDays(new Date(), 1);
   return { start: toISODate(start), end: toISODate(addDays(start, 1)) };

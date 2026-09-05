@@ -69,7 +69,7 @@ export default async function HomePage() {
           imageAlt={heroPhoto.alt}
         />
 
-        {/* Welcome — narrow measure, no image, lets the page breathe after the hero */}
+        {/* Welcome: narrow measure, no image, lets the page breathe after the hero */}
         <section id="about" className="bg-oat-50 py-20 sm:py-28">
           <div className="container-page">
             <SectionHeading
@@ -140,7 +140,7 @@ export default async function HomePage() {
             "Prep area with fridge and utensils",
             "Marshmallows and toasting sticks provided",
           ]}
-          footnote="The BBQ hut can be added to your stay for an additional cost — get in touch to secure it for your dates."
+          footnote="The BBQ hut can be added to your stay for an additional cost, so get in touch to secure it for your dates."
           moreHref="/bbq-hut"
         />
 

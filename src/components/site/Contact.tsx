@@ -139,7 +139,7 @@ export function Contact({ heading, body }: { heading: string; body: string }) {
                 animate={{ opacity: 1 }}
                 className="space-y-5"
               >
-                {/* Honeypot — bots fill it, people never see it */}
+                {/* Honeypot: bots fill it, people never see it */}
                 <input
                   type="text"
                   name="company"
@@ -240,7 +240,7 @@ export function Contact({ heading, body }: { heading: string; body: string }) {
                     rows={5}
                     maxLength={2000}
                     className={cn(inputClass, "resize-none")}
-                    placeholder="Anything you'd like to ask — the BBQ hut, bringing a dog, arrival times."
+                    placeholder="Anything you'd like to ask, e.g. the BBQ hut, bringing a dog, arrival times."
                   />
                 </div>
 

@@ -40,7 +40,7 @@ const FONT_BODY =
   "'Karla', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif";
 
 function preheader(text: string): string {
-  // Hidden preview text — shows in the inbox list next to the subject line.
+  // Hidden preview text: shows in the inbox list next to the subject line.
   return `<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;">${escapeHtml(
     text,
   )}&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌</div>`;
@@ -155,7 +155,7 @@ export function businessEnquiryEmail(d: EnquiryEmailData): { subject: string; ht
   return {
     subject: `New enquiry from ${d.name}${d.pod ? ` · ${d.pod}` : ""}`,
     html: shell({
-      preheaderText: `${d.name} — ${d.stay} — ${d.message.slice(0, 90)}`,
+      preheaderText: `${d.name} · ${d.stay} · ${d.message.slice(0, 90)}`,
       eyebrow: "New website enquiry",
       body,
     }),
@@ -199,9 +199,9 @@ export function customerConfirmationEmail(d: EnquiryEmailData): { subject: strin
   `;
 
   return {
-    subject: "We've got your message — Glamping Loch Lomond",
+    subject: "We've got your message: Glamping Loch Lomond",
     html: shell({
-      preheaderText: `Thanks ${d.name} — we'll reply within a day. Urgent? Call ${site.phone}.`,
+      preheaderText: `Thanks ${d.name}. We'll reply within a day. Urgent? Call ${site.phone}.`,
       eyebrow: "Thanks for getting in touch",
       body,
     }),

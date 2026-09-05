@@ -12,7 +12,7 @@ export const site = {
     postcode: "G83 8SB",
     country: "Scotland",
   },
-  // `||` (not `??`) on purpose — Vercel project settings can have this env var
+  // `||` (not `??`) on purpose: Vercel project settings can have this env var
   // present but set to an empty string, which `??` would treat as "set".
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.glampinglochlomond.co.uk",
   social: {
@@ -29,13 +29,14 @@ export const nav = [
   { label: "Hot tub", href: "/hot-tub-sauna" },
   { label: "View", href: "/the-view" },
   { label: "Nearby", href: "/whats-nearby" },
+  { label: "Blog", href: "/blog" },
   { label: "Gallery", href: "/#gallery" },
   { label: "Contact", href: "/#contact" },
 ] as const;
 
 /**
  * InnStyle booking identifiers.
- * These map 1:1 to the live booking engine — do not change without
+ * These map 1:1 to the live booking engine. Do not change without
  * confirming the bookable_id in InnStyle first.
  */
 export const DEFAULT_RATE_TYPE_ID = "70916";

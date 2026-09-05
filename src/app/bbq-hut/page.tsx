@@ -19,7 +19,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "The BBQ Hut",
   description:
-    "A Scandinavian-inspired BBQ hut, exclusive to the Rose Pod at Ballagan Farm — a central charcoal grill, a prep area and cushioned seating for the whole party.",
+    "A Scandinavian-inspired BBQ hut, exclusive to the Rose Pod at Ballagan Farm: a central charcoal grill, a prep area and cushioned seating for the whole party.",
   alternates: { canonical: "/bbq-hut" },
 };
 
@@ -104,7 +104,7 @@ export default async function BbqHutPage() {
 
             <Reveal delay={0.1}>
               <p className="mt-8 max-w-2xl border-l-2 border-lamp-500/50 pl-4 text-sm italic text-loch-800/60">
-                The BBQ hut can be added to your stay for an additional cost — get
+                The BBQ hut can be added to your stay for an additional cost, so get
                 in touch to secure it for your dates.
               </p>
             </Reveal>
@@ -117,7 +117,7 @@ export default async function BbqHutPage() {
               <div>
                 <p className="eyebrow mb-2 text-lamp-400">Book the Rose Pod</p>
                 <p className="max-w-lg text-oat-100/75">
-                  The BBQ hut comes exclusively with the Rose Pod — {site.address.line1}
+                  The BBQ hut comes exclusively with the Rose Pod, {site.address.line1}
                   &rsquo;s only pod with its own private cookout.
                 </p>
               </div>

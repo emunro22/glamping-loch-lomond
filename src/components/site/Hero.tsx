@@ -45,7 +45,7 @@ export function Hero({
       ) : null}
       <div className="absolute inset-0 bg-gradient-to-b from-loch-950/70 via-loch-900/80 to-loch-900" />
 
-      {/* Lamplight bloom — the warm window glow that gives the dusk its cosy */}
+      {/* Lamplight bloom: the warm window glow that gives the dusk its cosy */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-24 top-1/3 h-[32rem] w-[32rem] rounded-full bg-lamp-500/15 blur-[120px]"

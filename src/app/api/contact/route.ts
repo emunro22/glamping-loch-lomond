@@ -60,7 +60,7 @@ export async function POST(request: Request) {
     );
   }
 
-  // Store first — an enquiry that reaches the admin portal is never lost,
+  // Store first: an enquiry that reaches the admin portal is never lost,
   // even if the email provider is having a bad day.
   try {
     await sql`
@@ -77,12 +77,12 @@ export async function POST(request: Request) {
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.error("RESEND_API_KEY not set — enquiry saved but no email sent.");
+    console.error("RESEND_API_KEY not set. Enquiry saved but no email sent.");
     return NextResponse.json({ ok: true });
   }
 
   const resend = new Resend(apiKey);
-  // Every enquiry notification goes to the business inbox — always
+  // Every enquiry notification goes to the business inbox: always
   // info@glampinglochlomond.co.uk, regardless of what CONTACT_TO_EMAIL is set to.
   const to = site.email;
   const from = process.env.CONTACT_FROM_EMAIL ?? `Glamping Loch Lomond <onboarding@resend.dev>`;
@@ -109,8 +109,8 @@ export async function POST(request: Request) {
       subject: business.subject,
       html: business.html,
     });
-    // The SDK resolves (never throws) on an API-level rejection — a bad
-    // "from" domain, sandbox-mode restrictions, etc. — so that has to be
+    // The SDK resolves (never throws) on an API-level rejection, such as a bad
+    // "from" domain or sandbox-mode restrictions, so that has to be
     // checked explicitly or a failed send silently reports success.
     if (businessResult.error) {
       throw new Error(`Business notification: ${businessResult.error.message}`);

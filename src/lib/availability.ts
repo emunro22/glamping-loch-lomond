@@ -1,14 +1,14 @@
 /**
  * Reads live availability straight off InnStyle's own booking calendar.
  *
- * There's no documented API for this — InnStyle serves a plain, unauthenticated
+ * There's no documented API for this: InnStyle serves a plain, unauthenticated
  * HTML page per month at /listings/glampinglochlomond/calendars?date_in_view=...,
  * with one <section class="row bookable-av room_the-{slug}"> per pod and one
  * <div class="day js-day {status}" data-date="YYYY-MM-DD"> per day. That's what
  * gets parsed below with a couple of targeted regexes.
  *
  * This is unofficial and will silently stop working if InnStyle changes that
- * markup — every entry point here is wrapped so a failure just means "no
+ * markup, so every entry point here is wrapped so a failure just means "no
  * availability data", never a broken page. Nothing throws out of this module.
  */
 
@@ -75,7 +75,7 @@ async function fetchMonth(dateInView: string): Promise<MonthMap | null> {
 /**
  * Looks ~60 days ahead across two pods and returns a green/red summary per
  * pod slug ("rose" / "thistle"). Returns null if the fetch/parse didn't work
- * out — callers should treat that as "don't show a badge", not an error.
+ * out. Callers should treat that as "don't show a badge", not an error.
  */
 export async function getAvailabilitySummary(): Promise<Record<string, AvailabilitySummary> | null> {
   const [thisMonth, nextMonth] = await Promise.all([

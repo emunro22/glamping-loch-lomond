@@ -18,7 +18,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "The View",
   description:
-    "Open farmland, south-facing decking and grazing sheep and cattle — the view from the pods at Ballagan Farm, Loch Lomond.",
+    "Open farmland, south-facing decking and grazing sheep and cattle: the view from the pods at Ballagan Farm, Loch Lomond.",
   alternates: { canonical: "/the-view" },
 };
 
@@ -66,7 +66,7 @@ export default async function TheViewPage() {
                 {[
                   "South-facing decking on both pods",
                   "Sheep and cattle grazing right up to the fence line",
-                  "Open, uninterrupted countryside — no other buildings in view",
+                  "Open, uninterrupted countryside, no other buildings in view",
                   "Loch Lomond and The Trossachs National Park on the doorstep",
                   "Quiet enough to hear the farm wake up",
                   "A different sky every evening",

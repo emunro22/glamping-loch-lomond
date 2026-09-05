@@ -12,7 +12,7 @@ const faqs: Question[] = [
   {
     question: "Can we bring our dog?",
     answer:
-      "Yes — both pods are dog friendly, with no extra charge, up to two dogs per pod. There are farm walks straight from the door.",
+      "Yes, both pods are dog friendly, with no extra charge, up to two dogs per pod. There are farm walks straight from the door.",
   },
   {
     question: "Do the pods have a hot tub?",
@@ -22,17 +22,17 @@ const faqs: Question[] = [
   {
     question: "Is the BBQ hut included?",
     answer:
-      "The Scandinavian-style BBQ hut is exclusive to the Rose Pod and can be added to your stay for an additional cost — get in touch to secure it for your dates.",
+      "The Scandinavian-style BBQ hut is exclusive to the Rose Pod and can be added to your stay for an additional cost, so get in touch to secure it for your dates.",
   },
   {
     question: "How do we book, and is there a booking fee?",
     answer:
-      "Use “Check dates” to see live prices and availability and book directly through our secure booking system — there's no booking fee.",
+      "Use “Check dates” to see live prices and availability and book directly through our secure booking system. There's no booking fee.",
   },
   {
     question: "Where exactly are you, and how far from Loch Lomond?",
     answer:
-      "We're on Ballagan Farm in Gartocharn, inside Loch Lomond and The Trossachs — Scotland's first National Park. The loch shore, hill walks and Highland views are all within half an hour's drive.",
+      "We're on Ballagan Farm in Gartocharn, inside Loch Lomond and The Trossachs, Scotland's first National Park. The loch shore, hill walks and Highland views are all within half an hour's drive.",
   },
 ];
 

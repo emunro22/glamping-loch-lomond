@@ -51,7 +51,7 @@ export function Botanical({ variant, className, animate = true }: Props) {
 }
 
 const rosePaths = [
-  // bloom — spiralling petals
+  // bloom: spiralling petals
   "M60 52c-9 0-16-6-16-14s7-14 16-14 17 6 17 14c0 10-9 17-19 17-13 0-23-9-23-21S46 14 60 14s26 10 26 24-11 26-26 26",
   // outer petal sweep
   "M34 40c-4 8-3 18 3 25M86 40c4 8 3 18-3 25",

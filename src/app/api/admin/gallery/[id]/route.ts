@@ -36,7 +36,7 @@ export async function DELETE(_request: Request, { params }: Ctx) {
     try {
       await del(rows[0].url);
     } catch (error) {
-      // The database row still goes — an orphaned blob is the lesser problem.
+      // The database row still goes: an orphaned blob is the lesser problem.
       console.error("Blob delete failed:", error);
     }
   }

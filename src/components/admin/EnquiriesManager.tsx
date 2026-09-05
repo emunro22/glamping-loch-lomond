@@ -150,7 +150,7 @@ export function EnquiriesManager({ initial }: { initial: Enquiry[] }) {
 
                         <div className="mt-5 flex flex-wrap gap-2">
                           <a
-                            href={`mailto:${enquiry.email}?subject=${encodeURIComponent("Re: your enquiry — Glamping Loch Lomond")}`}
+                            href={`mailto:${enquiry.email}?subject=${encodeURIComponent("Re: your enquiry to Glamping Loch Lomond")}`}
                             className="rounded-full bg-loch-900 px-5 py-2.5 text-sm font-semibold text-oat-50 transition-colors hover:bg-loch-700"
                           >
                             Reply by email

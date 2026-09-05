@@ -143,7 +143,7 @@ export default async function PodPage({
               "Marshmallows and toasting sticks provided",
             ]}
             photos={bbqHutPhotos}
-            footnote="Included with the Rose Pod — just let us know you'd like to use it for your stay."
+            footnote="Included with the Rose Pod, just let us know you'd like to use it for your stay."
             tone="loch"
           />
         ) : (
@@ -170,7 +170,7 @@ export default async function PodPage({
             id="pod-extras"
             eyebrow="Exclusive to the Thistle Pod"
             heading="Hot tub & sauna"
-            body="The Thistle Pod has its own hot tub, set under a covered gazebo, and sole access to our Scandinavian barrel sauna — both a few steps from your door."
+            body="The Thistle Pod has its own hot tub, set under a covered gazebo, and sole access to our Scandinavian barrel sauna, both a few steps from your door."
             points={[
               "Private hot tub under a covered gazebo",
               "Exclusive access to the barrel sauna",
@@ -178,14 +178,14 @@ export default async function PodPage({
               "Towels and robes provided",
             ]}
             photos={extrasPhotos}
-            footnote="Get in touch for availability — we'll have it ready before you arrive."
+            footnote="Get in touch for availability. We'll have it ready before you arrive."
           />
         ) : (
           <PodSection
             id="pod-extras"
             eyebrow="Exclusive to the Rose Pod"
             heading="Your own hot tub"
-            body="The Rose Pod has its own hot tub, right out on the decking under the open sky — up to temperature and ready before you arrive."
+            body="The Rose Pod has its own hot tub, right out on the decking under the open sky, up to temperature and ready before you arrive."
             points={[
               "Private hot tub, open to the sky",
               "Ready and up to temperature on arrival",
@@ -243,7 +243,7 @@ export default async function PodPage({
                 <div>
                   <p className="eyebrow mb-2 text-lamp-600">The other pod</p>
                   <p className="max-w-lg text-loch-800/75">
-                    Have a look at {otherPod.name} too — {otherPod.tagline.toLowerCase()}.
+                    Have a look at {otherPod.name} too: {otherPod.tagline.toLowerCase()}.
                   </p>
                 </div>
                 <ButtonLink href={`/pods/${otherPod.slug}`} variant="outline">

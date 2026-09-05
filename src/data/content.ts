@@ -18,15 +18,15 @@ export const fallbackContent: Record<string, { heading: string; body: string }> 
   },
   bbq: {
     heading: "The BBQ hut",
-    body: "A Scandinavian-inspired BBQ hut, available exclusively to the Rose Pod. A central charcoal grill with a built-in chimney sits under a circular wooden dining table, with cushioned bench seating around the edge. To the rear you'll find a prep area with a fridge and all the cooking tools you need. It's a proper wooden hut with fairy lights strung along the beams, big enough for the whole party to gather round the fire while dinner cooks — plates, glasses and condiments are all provided, so all you need to bring is the food.",
+    body: "A Scandinavian-inspired BBQ hut, available exclusively to the Rose Pod. A central charcoal grill with a built-in chimney sits under a circular wooden dining table, with cushioned bench seating around the edge. To the rear you'll find a prep area with a fridge and all the cooking tools you need. It's a proper wooden hut with fairy lights strung along the beams, big enough for the whole party to gather round the fire while dinner cooks. Plates, glasses and condiments are all provided, so all you need to bring is the food.",
   },
   extras: {
     heading: "Hot tub & sauna",
-    body: "Both pods have their own hot tub, set up a little differently — the Rose Pod's sits open under the sky, the Thistle Pod's under a covered gazebo. The Thistle Pod also has sole access to our Scandinavian barrel sauna.",
+    body: "Both pods have their own hot tub, set up a little differently: the Rose Pod's sits open under the sky, the Thistle Pod's under a covered gazebo. The Thistle Pod also has sole access to our Scandinavian barrel sauna.",
   },
   view: {
     heading: "The view",
-    body: "You are right out in the great outdoors. Situated in a rural setting, the pods face south so you can make the most of the sun in the beautiful Scottish countryside. Ballagan Farm still runs sheep and cattle in the fields around the pods, so don't be surprised to wake up to them grazing just beyond the fence — it's about as far from a caravan park as glamping gets.",
+    body: "You are right out in the great outdoors. Situated in a rural setting, the pods face south so you can make the most of the sun in the beautiful Scottish countryside. Ballagan Farm still runs sheep and cattle in the fields around the pods, so don't be surprised to wake up to them grazing just beyond the fence. It's about as far from a caravan park as glamping gets.",
   },
   nearby: {
     heading: "Explore beyond the farm gate",

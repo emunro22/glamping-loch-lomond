@@ -31,8 +31,8 @@ export default function PrivacyPolicyPage() {
       </p>
       <p>
         <strong>Information collected automatically.</strong> Like most websites,
-        we collect technical information about your visit — IP address, browser
-        type, device and pages viewed — to keep the site working and understand
+        we collect technical information about your visit: IP address, browser
+        type, device and pages viewed, to keep the site working and understand
         how it&rsquo;s used.
       </p>
 
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
       <p>
         We use a small number of cookies to keep the site working and to
         understand how it is used. You can manage or block cookies in your
-        browser settings — the site will still work without them.
+        browser settings. The site will still work without them.
       </p>
 
       <h2>Keeping it safe</h2>

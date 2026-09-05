@@ -13,7 +13,7 @@ function shortDate(iso: string): string {
 }
 
 /**
- * A quiet green/red status pulled from InnStyle's own calendar — see
+ * A quiet green/red status pulled from InnStyle's own calendar. See
  * src/lib/availability.ts. Renders nothing if that data isn't available,
  * so a scrape hiccup never shows a wrong or broken badge.
  */

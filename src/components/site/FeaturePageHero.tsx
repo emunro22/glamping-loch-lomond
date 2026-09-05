@@ -10,7 +10,7 @@ type Props = {
   imageAlt?: string;
 };
 
-/** A simpler dark hero for the standalone feature pages (BBQ hut, the view, etc.) — no booking panel. */
+/** A simpler dark hero for the standalone feature pages (BBQ hut, the view, etc.), with no booking panel. */
 export function FeaturePageHero({ eyebrow, title, body, imageUrl, imageAlt = "" }: Props) {
   return (
     <section className="relative isolate overflow-hidden bg-dusk pt-20">

@@ -8,7 +8,7 @@ import type { Photo } from "@/data/media";
 
 type Props = { photos: Photo[] };
 
-/** A lightweight masonry grid with a lightbox — used across the pod pages for photo sets. */
+/** A lightweight masonry grid with a lightbox, used across the pod pages for photo sets. */
 export function PodGallery({ photos }: Props) {
   const [active, setActive] = useState<number | null>(null);
 

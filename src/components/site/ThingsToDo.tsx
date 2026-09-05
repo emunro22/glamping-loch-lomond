@@ -4,7 +4,7 @@ import { LocationMap } from "./LocationMap";
 import { googleMapsDirectionsUrl, appleMapsDirectionsUrl } from "@/lib/maps";
 
 /**
- * Drive time is the organising device here — it's the thing guests actually
+ * Drive time is the organising device here: it's the thing guests actually
  * plan around, and it's genuinely true of the content rather than decoration.
  * mapQuery is the search term handed to Google/Apple Maps for directions.
  */
@@ -54,7 +54,7 @@ const places = [
   {
     drive: "On foot",
     name: "West Highland Way",
-    note: "Walk a section, or keep going — it runs all the way north.",
+    note: "Walk a section, or keep going: it runs all the way north.",
     mapQuery: "West Highland Way, Balloch",
   },
 ];
@@ -110,8 +110,8 @@ export function ThingsToDo() {
         <Reveal delay={0.1}>
           <p className="mt-12 max-w-2xl text-sm leading-relaxed text-loch-800/65">
             The villages of Balloch, Luss and Balmaha all have pubs, cafés and
-            independent shops, and most of the walks around here are dog friendly
-            — so bring them along.
+            independent shops, and most of the walks around here are dog friendly,
+            so bring them along.
           </p>
         </Reveal>
 

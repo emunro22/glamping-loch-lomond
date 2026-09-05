@@ -1,6 +1,6 @@
 /**
  * Static photo library sorted by subject. Used as the fallback source for
- * the homepage, pod pages and gallery when the database has no override —
+ * the homepage, pod pages and gallery when the database has no override,
  * see src/lib/pods.ts and src/lib/gallery.ts.
  */
 
@@ -64,7 +64,7 @@ export const nearbyPhotos: Photo[] = [
   { src: "/winnyhill.jpg", alt: "The gate into Whinny Hill Wood, a Woodland Trust Scotland site" },
 ];
 
-/** Photos specific to each named pod — its own bedroom, living area and small details. */
+/** Photos specific to each named pod: its own bedroom, living area and small details. */
 export const rosePodPhotos: Photo[] = [
   { src: "/rose-pod-patio-chiminea.jpg", alt: "The Rose Pod's patio with a chiminea, live-edge bench and farmland view" },
   { src: "/thistle-pod-bedroom.jpg", alt: "Inside the Rose Pod: the double bed under the curved timber ceiling" },

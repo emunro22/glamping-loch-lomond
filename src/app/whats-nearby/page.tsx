@@ -13,7 +13,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "What's Nearby",
   description:
-    "Loch Lomond Shores, Balloch Marina, Conic Hill and the West Highland Way — everything within half an hour of Ballagan Farm, Scotland's first National Park.",
+    "Loch Lomond Shores, Balloch Marina, Conic Hill and the West Highland Way: everything within half an hour of Ballagan Farm, Scotland's first National Park.",
   alternates: { canonical: "/whats-nearby" },
 };
 
@@ -43,7 +43,7 @@ export default async function WhatsNearbyPage() {
 
         <Contact
           heading="Plan your trip"
-          body="Not sure what to fit in? Send us a note and we'll point you the right way — we live here."
+          body="Not sure what to fit in? Send us a note and we'll point you the right way. We live here."
         />
       </main>
 

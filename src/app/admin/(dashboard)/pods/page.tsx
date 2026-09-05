@@ -13,7 +13,7 @@ export default async function PodsPage() {
     <>
       <PageHeader
         title="Pods"
-        description="Names, descriptions, features and photos. The bookable ID is what links each pod to InnStyle — only change it if InnStyle changes."
+        description="Names, descriptions, features and photos. The bookable ID is what links each pod to InnStyle, so only change it if InnStyle changes."
       />
       <PodsManager initial={rows as PodRecord[]} />
     </>

@@ -103,7 +103,7 @@ export function BookingPanel({ className, tone = "dark", initialPod }: Props) {
         </p>
       </div>
 
-      {/* Pod switch — two options, so a segmented control beats a dropdown */}
+      {/* Pod switch: two options, so a segmented control beats a dropdown */}
       <div
         className={cn(
           "mb-5 grid grid-cols-2 gap-1 rounded-2xl p-1",

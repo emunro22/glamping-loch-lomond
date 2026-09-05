@@ -7,12 +7,12 @@ export function fullAddress(): string {
 
 /**
  * Ballagan Farm, Gartocharn (postcode G83 8SB), geocoded via OpenStreetMap
- * Nominatim — postcode-centroid accuracy, which is what the embed below needs.
+ * Nominatim, for postcode-centroid accuracy, which is what the embed below needs.
  */
 export const FARM_COORDS = { lat: 56.0512389, lon: -4.5104331 };
 
 /**
- * OpenStreetMap's embed — no API key, no billing, and it just works in an
+ * OpenStreetMap's embed: no API key, no billing, and it just works in an
  * iframe. Google's keyless "maps.google.com/maps?...&output=embed" trick no
  * longer reliably embeds (Google now serves it through the Maps Embed API
  * infrastructure, which expects a key even when the response looks anonymous).

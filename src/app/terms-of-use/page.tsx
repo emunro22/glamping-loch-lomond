@@ -79,8 +79,8 @@ export default function TermsOfUsePage() {
 
       <h2>Content you submit</h2>
       <p>
-        If you send us content through this website — an enquiry, a review, a
-        photograph — you grant us a non-exclusive, royalty-free licence to use,
+        If you send us content through this website (an enquiry, a review, a
+        photograph), you grant us a non-exclusive, royalty-free licence to use,
         reproduce and display it in connection with our business. You are
         responsible for what you submit and must make sure it is lawful and does
         not infringe anyone&rsquo;s rights.

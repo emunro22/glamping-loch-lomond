@@ -20,7 +20,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Hot Tub & Sauna",
   description:
-    "Both pods at Ballagan Farm have their own hot tub, set up differently — the Rose Pod's open to the sky, the Thistle Pod's under a covered gazebo with its own sauna.",
+    "Both pods at Ballagan Farm have their own hot tub, set up differently: the Rose Pod's open to the sky, the Thistle Pod's under a covered gazebo with its own sauna.",
   alternates: { canonical: "/hot-tub-sauna" },
 };
 
@@ -85,7 +85,7 @@ export default async function HotTubSaunaPage() {
               eyebrow: "The Rose Pod's hot tub",
               heading: "Open to the sky",
               intro:
-                "Right out on the Rose Pod's own decking, with an umbrella and a chiminea alongside — up to temperature and ready before you arrive.",
+                "Right out on the Rose Pod's own decking, with an umbrella and a chiminea alongside, and up to temperature and ready before you arrive.",
               points: [
                 "Private hot tub, open to the sky",
                 "Ready and up to temperature on arrival",
@@ -101,7 +101,7 @@ export default async function HotTubSaunaPage() {
               eyebrow: "The Thistle Pod's hot tub & sauna",
               heading: "Under a covered gazebo",
               intro:
-                "Sheltered under its own gazebo, with rattan seating alongside — plus sole access to our Scandinavian barrel sauna, both exclusive to the Thistle Pod.",
+                "Sheltered under its own gazebo, with rattan seating alongside, plus sole access to our Scandinavian barrel sauna, both exclusive to the Thistle Pod.",
               points: [
                 "Private hot tub under a covered gazebo",
                 "Exclusive access to the barrel sauna",

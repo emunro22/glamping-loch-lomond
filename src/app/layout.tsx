@@ -95,7 +95,7 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className={`${display.variable} ${body.variable}`}>
       <head>
-        {/* Photos are served from this project's Vercel Blob store — warm the
+        {/* Photos are served from this project's Vercel Blob store, so warm the
             connection early since almost every page loads several of them. */}
         <link rel="preconnect" href="https://oiw4qguz3iz8s2jq.public.blob.vercel-storage.com" />
         <link

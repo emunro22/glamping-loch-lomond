@@ -11,7 +11,7 @@ export default async function GalleryPage() {
     <>
       <PageHeader
         title="Photos"
-        description="Upload photos for the gallery on the website. Drag to reorder — the first photo appears first."
+        description="Upload photos for the gallery on the website. Drag to reorder: the first photo appears first."
       />
       <GalleryManager initial={images} />
     </>

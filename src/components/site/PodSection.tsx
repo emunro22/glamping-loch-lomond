@@ -15,7 +15,7 @@ type Props = {
   tone?: "oat" | "loch";
 };
 
-/** A photo-first section used on the pod detail pages — heading, points, then a gallery grid. */
+/** A photo-first section used on the pod detail pages: heading, points, then a gallery grid. */
 export function PodSection({
   id,
   eyebrow,

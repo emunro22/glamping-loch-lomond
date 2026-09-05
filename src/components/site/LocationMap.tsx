@@ -7,7 +7,7 @@ type Props = {
   className?: string;
 };
 
-/** An embedded map of the farm plus one-tap directions — no API key required. */
+/** An embedded map of the farm plus one-tap directions, no API key required. */
 export function LocationMap({ tone = "dark", className }: Props) {
   const isLight = tone === "light";
 
